@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "vite: dev",
+      "type": "shell",
+      "command": "npm run dev",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "ready in"
+        }
+      }
+    },
+    {
+      "label": "vite: preview",
+      "type": "shell",
+      "command": "npm run preview",
+      "isBackground": true,
+      "dependsOn": "vite: build",
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "vite preview",
+          "endsPattern": "localhost"
+        }
+      }
+    },
+    {
+      "label": "vite: build",
+      "type": "shell",
+      "command": "npm run build",
+      "problemMatcher": "$tsc"
+    }
+  ]
+}
